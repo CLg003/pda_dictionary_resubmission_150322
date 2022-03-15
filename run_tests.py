@@ -1,6 +1,5 @@
 import unittest
-from models.cafe import *
-from models.cake import *
+from src.cafe import *
 
 if __name__ == '__main__':
     unittest.main()
