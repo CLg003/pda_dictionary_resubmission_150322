@@ -14,7 +14,11 @@ def increase_till(cafe, amount):
     cafe["till"] += amount
 
 def list_gluten_free_cakes(cafe):
-    pass
+    gluten_free_cakes = []
+    for cake in cafe["cake_menu"]:
+        if cake["gluten_free"]:
+            gluten_free_cakes.append(cake)
+    return gluten_free_cakes
 
 def find_cake_by_name(cake_name):
     pass

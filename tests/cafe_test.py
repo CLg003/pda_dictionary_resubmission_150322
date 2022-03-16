@@ -57,7 +57,7 @@ class TestCafe(unittest.TestCase):
         increase_till(self.cafe, 3.50)
         self.assertEqual(103.50, self.cafe["till"])
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_list_gluten_free_cakes(self):
         gf_cakes = list_gluten_free_cakes(self.cafe)
         self.assertEqual(2, len(gf_cakes))
