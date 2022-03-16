@@ -32,25 +32,32 @@ class TestCafe(unittest.TestCase):
                     "gluten_free" : True,
                     "price" : 2.50
                 }
-            ]
+            ],
+            "cakes_sold" : 0
         }
 
     # --- TESTS ---
 
     # @unittest.skip("delete this line to run the test")
-    def test_cafe_has_name(self):
-        name = get_cafe_name(self.cafe)
-        self.assertEqual("Cake Corner", name)
+    # def test_cafe_has_name(self):
+    #     name = get_cafe_name(self.cafe)
+    #     self.assertEqual("Cake Corner", name)
 
     # @unittest.skip("delete this line to run the test")
-    def test_cafe_has_till(self):
-        till = get_cafe_till(self.cafe)
-        self.assertEqual(100, till)
+    # def test_cafe_has_till(self):
+    #     till = get_cafe_till(self.cafe)
+    #     self.assertEqual(100, till)
 
     # @unittest.skip("delete this line to run the test")
-    def test_cafe_has_menu(self):
-        menu = get_cafe_menu(self.cafe)
-        self.assertEqual(4, len(menu))
+    # def test_cafe_has_menu(self):
+    #     menu = get_cafe_menu(self.cafe)
+    #     self.assertEqual(4, len(menu))
+
+    # @unittest.skip("delete this line to run the test")
+    # def test_list_gluten_free_cakes(self):
+    #     gf_cakes = list_gluten_free_cakes(self.cafe)
+    #     self.assertEqual(2, len(gf_cakes))
+
 
     # @unittest.skip("delete this line to run the test")
     def test_can_increase_till(self):
@@ -58,16 +65,13 @@ class TestCafe(unittest.TestCase):
         self.assertEqual(103.50, self.cafe["till"])
 
     # @unittest.skip("delete this line to run the test")
-    def test_list_gluten_free_cakes(self):
-        gf_cakes = list_gluten_free_cakes(self.cafe)
-        self.assertEqual(2, len(gf_cakes))
-    
-    @unittest.skip("delete this line to run the test")
     def test_can_find_cake_by_name(self):
-        cake = find_cake_by_name("Carrot Cake")
+        cake = find_cake_by_name(self.cafe, "Carrot Cake")
         self.assertEqual("cream cheese frosting", cake["topping"])
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_can_sell_cake_by_name(self):
         sell_cake(self.cafe, "Carrot Cake")
+        self.assertEqual(103, self.cafe["till"])
+        self.assertEqual(1, self.cafe["cakes_sold"])
 
