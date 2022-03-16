@@ -10,6 +10,9 @@ def get_cafe_menu(cafe):
         cakes.append(cake["name"])
     return cakes
 
+def increase_till(cafe, amount):
+    cafe["till"] += amount
+
 def list_gluten_free_cakes(cafe):
     pass
 
